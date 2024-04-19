@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador Veiculos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h2>Gerenciador de Veículos</h2>
+            <img src="images/car_icon.jpg" width="320" height="180">
+        </div>
+    </header>
+
+    <div id="selecaoVeiculo">
+        <select id="veiculos" title="veiculos" onchange="fetchVehicleData(this.value)">
+            <option value="" disabled selected style="display:none;">Selecione o Veículo:</option>
+        </select>
+        <button id="addVehicle" onclick="addVehicle()">Adicionar Veículo</button>
+        <button id="deleteVehicle" onclick="deleteVehicle()">Deletar Veículo</button>
+    </div>
+
+    
+<div id="addVehicleModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeAddVehicleModal" onclick="closeAddVehicleModal()">&times;</span>
+      <h2>Adicionar Veículo</h2>
+      <form id="addVehicleForm">
+          <label for="placaInput">Placa:</label>
+          <input type="text" id="placaInput" name="placaInput">
+          <br>
+          <br>
+          <label for="marcaInput">Marca:</label>
+          <input type="text" id="marcaInput" name="marcaInput">
+          <br>
+          <br>
+          <label for="modeloInput">Modelo:</label>
+          <input type="text" id="modeloInput" name="modeloInput">
+          <br>
+          <br>
+          <label for="anoFabricacaoInput">Ano de Fabricação:</label>
+          <input type="text" id="anoFabricacaoInput" name="anoFabricacaoInput">
+          <br>
+          <br>
+          <label for="anoModeloInput">Ano Modelo:</label>
+          <input type="text" id="anoModeloInput" name="anoModeloInput">
+          <br>
+          <br>
+          <label for="tipoCarroceriaInput">Tipo de Carroceria (Sedan, Hatch, ...):</label>
+          <input type="text" id="tipoCarroceriaInput" name="tipoCarroceriaInput">
+          <br>
+          <br>
+          <button type="button" id="submitAddVehicleBtn" onclick="submitAddVehicle()">OK</button>
+      </form>
+    </div>
+  </div>
+
+    <div>
+        <h3 id="abastecimentosTitle">Abastecimentos</h3>
+        <button id="AddFuel" onclick="addFuel()">Adicionar abastecimento</button>
+        <ul id="abastecimentos">
+        </ul>
+    </div>
+       
+<div id="addFuelModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeAddFuelModal" onclick="closeAddFuelModal()">&times;</span>
+      <h2>Adicionar Abastecimento</h2>
+      <form id="addFuelForm">
+          <label for="odometroInput">Odômetro (km):</label>
+          <input type="text" id="odometroInput" name="odometroInput">
+          <br>
+          <br>
+          <label for="volumeInput">Volume (L):</label>
+          <input type="text" id="volumeInput" name="volumeInput">
+          <br>
+          <br>
+          <label for="valorInput">Valor (R$):</label>
+          <input type="text" id="valorInput" name="valorInput">
+          <br>
+          <br>
+          <label for="completandoTanqueInput">Completou o tanque:</label>
+          <input type="checkbox" id="completandoTanqueInput" name="completandoTanqueInput">
+          <br>
+          <button type="button" id="submitAddFuelBtn" onclick="submitAddFuel()">OK</button>
+      </form>
+    </div>
+  
+  </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
